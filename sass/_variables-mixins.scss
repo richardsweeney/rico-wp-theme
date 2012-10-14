@@ -1,0 +1,56 @@
+@mixin rgba-background($color, $opacity: 1) {
+  background: $color;
+  background: rgba($color, $opacity)
+}
+
+@mixin clearfix {
+	&:before, &:after {
+    content:"";
+    display:table;
+  }
+  &:after {
+  	clear: both;
+  }
+}
+
+@mixin center-layout {
+	width: 90%;
+	max-width: 1000px;
+	min-width: 320px;
+	margin: 0 auto;
+}
+
+@mixin drop-shadow {
+  position:relative;
+  background: #fefefe;
+  @include box-shadow(0 0 3px rgba(0, 0, 0, 0.5));
+  @include border-radius(1px);
+  &:before {
+    content:"";
+    position:absolute;
+    z-index:-2;
+    top: 10px;
+    bottom: 10px;
+    left: 0;
+    right: 0;
+    @include box-shadow(0 0 15px rgba(0,0,0,0.4));
+    @include border-radius(10px / 100px);
+  }
+}
+
+@mixin slab {
+	font-family: "ff-tisa-web-pro", sans-serif;
+}
+
+@mixin sans {
+	font-family: "proxima-nova", serif;
+}
+
+@mixin image-border($padding: 2.5%) {
+	padding: $padding;
+	background: #fff;
+	max-width: 100% - ($padding * 2) !important;
+	@include border-radius(2px);
+	@include box-shadow(0 0 3px rgba(0, 0, 0, 0.3));
+}
+

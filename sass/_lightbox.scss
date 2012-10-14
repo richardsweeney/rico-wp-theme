@@ -1,0 +1,97 @@
+
+.rps-lightbox {
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    z-index: 10;
+    @include rgba-background(#111, 0.8);
+}
+
+.rps-lightbox-content {
+    border: 10px solid #fff;
+    position: relative;
+    margin: 0 auto;
+    background: #fff url(../img/loader.gif) no-repeat center center;
+    z-index: 100;
+    max-height: 95%;
+    max-width: 95%;
+    @include transition(all 0.3s ease-in-out);
+    @include transition(width 0.3s ease-in-out);
+    @include border-radius(2px);
+    @include box-shadow(0 0 10px rgba(#000, 0.75));
+    @include box-sizing(border-box);
+    .close-trigger,
+    .pause {
+        position: absolute;
+        top: 0;
+        right: 0;
+        color: #fff;
+        cursor: pointer;
+        padding: 10px;
+        font-size: 17px;
+        z-index: 500;
+        @include rgba-background(#000, 0.7);
+        @include border-radius(0 0 0 10px);
+        @include opacity(1);
+        &.hidden {
+            @include opacity(0);
+        }
+    }
+    .pause {
+        right: auto;
+        left: 0;
+        @include border-radius(0 0 10px 0);
+    }
+    .title-container {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        text-align: center;
+        padding-top: 10px;
+        background: #fff;
+        z-index: 500;
+        h1 {
+            margin: 0;
+            font-size: 16px;
+            @include opacity(1);
+            @include transition(opacity 0.2s ease);
+            &.hidden {
+                @include opacity(0);
+            }
+        }
+    }
+    .previous,
+    .next {
+        position: absolute;
+        top: 50%;
+        padding: 10px 10px 15px;
+        color: #fff;
+        z-index: 500;
+        @include rgba-background(#000, 0.7);
+        @include opacity(1);
+        @include transition(opacity 0.4s ease-in-out);
+        &.hidden {
+            @include opacity(0);
+        }
+    }
+    .previous {
+        left: 0;
+        padding-right: 10px;
+        @include border-radius(0 10px 10px 0);
+    }
+    .next {
+        right: 0;
+        padding-left: 10px;
+        @include border-radius(10px 0 0 10px);
+    }
+    .lightbox-image {
+        max-height: 100%;
+        max-width: 100%;
+        z-index: 200;
+        @include opacity(1);
+        @include transition(opacity 0.4s ease-in-out);
+        &.hidden {
+            @include opacity(0);
+        }
+    }
+}
