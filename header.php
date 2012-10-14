@@ -1,10 +1,8 @@
 <!DOCTYPE html">
 <html <?php language_attributes(); ?>>
-
 <head>
 
 	<title>Richard Sweeney <?php wp_title(':'); ?></title>
-
 	<meta name="description" content="I'm a web developer that loves WordPress, HTML5, CSS3, PHP, JavaScript, jQuery.">
 	<meta name="author" content="Richard Sweeney">
 	<meta name ="viewport" content ="initial-scale=1.0 width=device-width">
